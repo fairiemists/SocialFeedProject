@@ -10,11 +10,16 @@ const CreatePost = (props) => {
         event.preventDefault();
         let newPost = {
             person: postName,
-            comment: postBody
+            comment: postBody,
+            id: props.entries.length +1
         };
+        props.newPostProperty(newPost);
+        setPostName('');
+        setPostBody('');
     }
 
     return ( 
+
         <form className="form-inline" onSubmit={handleSubmit}>
             <div>
                 <label>Name</label>

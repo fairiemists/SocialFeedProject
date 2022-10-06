@@ -1,11 +1,16 @@
 import React from 'react';
-import Post from './Components/Post/Post';
+import Post from '../Post/Post';
 
 const DisplayPosts = (props) => {
+
+    //the way to reverse info coming from database
+    let postArrayRev = [...props.postArray].reverse()
+
+
     return ( 
         
         <ul>
-            {props.postArray.map(post => <li><Post post={post}/></li>)}
+            {postArrayRev.map(post => <li><Post post={post}/></li>)}
         </ul>
      );
 }
@@ -13,6 +18,3 @@ const DisplayPosts = (props) => {
 export default DisplayPosts;
 
 
-    // <div className='border-box'>
-    // <Post/>
-    // </div>
