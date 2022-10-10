@@ -1,5 +1,7 @@
 import React from 'react';
 import Post from '../Post/Post';
+import { ListGroup, ListGroupItem } from 'react-bootstrap';
+
 
 const DisplayPosts = (props) => {
 
@@ -8,10 +10,14 @@ const DisplayPosts = (props) => {
 
 
     return ( 
-        
-        <ul>
-            {postArrayRev.map(post => <li><Post post={post}/></li>)}
-        </ul>
+        <ListGroup>
+            {postArrayRev.map(post => 
+                <ListGroupItem>
+                    <Post post={post}/>
+                    
+                </ListGroupItem>
+            )}
+        </ListGroup>
      );
 }
  

@@ -6,4 +6,51 @@
     padding: 1em;
 }
 
+.rating {
+  display: inline-block;
+  width: 100%;
+  margin-top: 10px;
+  padding-top: 10px;
+  text-align: center;
+}
 
+.like,
+.dislike {
+  display: inline-block;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.dislike:hover,
+.like:hover {
+  color: grey;
+  transition: all .2s ease-in-out;
+  transform: scale(1.1);
+}
+
+.dislike.active {
+  color: red;
+}
+
+.like.active {
+  color: green;
+}
+  
+.btn {
+    display: inline;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.inactive {
+    color: grey;
+  }
+
+  
+.active {
+    color: red;
+  }
+
+.active {
+    color: green;
+  }
