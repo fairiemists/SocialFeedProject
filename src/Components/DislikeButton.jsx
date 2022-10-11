@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
-import { FaThumbsDown } from 'react-icons/fa';
+import { Icon } from '@iconify/react';
 
 
-function DislikeButton() { 
-    const [FaThumbsDown, setDislikeButtonClass] = useState('inactive');
+const DislikeButton = (props) => {
 
+    const [thumbsDown, setDislikeButtonClass] = useState('inactive');
 
-    function dislikeHandleClick() {
-        if(FaThumbsDown === 'inactive'){
+    function dislikeHandleClick(event) {
+        event.preventDefault();
+        if(thumbsDown === 'inactive'){
             setDislikeButtonClass('active');
         }
         else {
@@ -16,14 +17,13 @@ function DislikeButton() {
     }    
 
 
-const DislikeButton = (props) => {
     return ( 
         <div>
-            <button className='btn' onClick={dislikeHandleClick}><i class='FaThumbsDown'></i></button>
+            <button id='thumb_down' className='dislike' onClick={dislikeHandleClick}><Icon icon="fa:thumbs-down" aria-hidden="true"/></button>
 
         </div>
     );
-}}
+}
  
 export default DislikeButton;
 

@@ -1,31 +1,27 @@
 import React, { useState } from 'react';
-import { FaThumbsUp } from 'react-icons/fa';
-
-
+import { Icon } from '@iconify/react';
 
 
 const LikeButton = (props) => {
 
-    function LikeButton() {
-        const [FaThumbsUp, setLikeButtonClass] = useState('inactive');
+    const [thumbsUp, setLikeButtonClass] = useState('inactive');
     
-    
-        function likeHandleClick() {
-            if(FaThumbsUp === 'inactive'){
-                setLikeButtonClass('active');
-            }
-            else {
-                setLikeButtonClass('inactive');
-            }
+    function likeHandleClick(event) {
+        event.preventDefault();
+        if(thumbsUp === 'inactive'){
+            setLikeButtonClass('active');
         }
+        else {
+            setLikeButtonClass('inactive');
+        }
+    }
 
 
     return ( 
         <div>
-            <button className='btn' onClick={likeHandleClick}><i className='FaThumbsUp'></i></button>
-
+            <button id='thumb_up' className='like' onClick={likeHandleClick}><Icon icon="fa:thumbs-up" aria-hidden="true"/></button>
         </div>
     );
-}}
+}
  
 export default LikeButton;

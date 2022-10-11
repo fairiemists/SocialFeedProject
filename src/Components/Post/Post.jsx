@@ -1,11 +1,11 @@
 import React from 'react';
-//import LikeButton from '../LikeButton';
-//import DislikeButton from '../DislikeButton';
+import DislikeButton from '../DislikeButton';
+import LikeButton from '../LikeButton';
 
 
 const Post = ({post}) => {
 
-    // $('.like, .dislike').on('click', function() {
+    // const $('.like, .dislike').on('click', function(event) {
     //     event.preventDefault();
     //     $('.active').removeClass('active');
     //     $(this).addClass('active');
@@ -13,13 +13,10 @@ const Post = ({post}) => {
 
     return ( 
 
-        <div className='btn'>
+        <div>
             <p>{post.person}</p>
             <p>{post.comment}</p>
-            <div className="rating">
-                <i className="fa fa-thumbs-up fa-3x like" aria-hidden="true"></i>
-                <i className="fa fa-thumbs-down fa-3x like" aria-hidden="true"></i>
-            </div>
+            <div className='rating'><LikeButton/><DislikeButton/></div>
         </div>
 
     );

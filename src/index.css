@@ -6,19 +6,34 @@
     padding: 1em;
 }
 
+
+
+
+
+
+
+
+
+
+
 .rating {
-  display: inline-block;
-  width: 100%;
-  margin-top: 10px;
-  padding-top: 10px;
-  text-align: center;
+  margin: 1px;
+  padding: 1px;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  font-size: 20px;
 }
 
 .like,
 .dislike {
-  display: inline-block;
+  display: flex;
+  flex-direction: row;  
+  align-items: baseline;
   cursor: pointer;
   margin: 10px;
+  fill: none;
+  border: 0em;
 }
 
 .dislike:hover,
@@ -28,29 +43,36 @@
   transform: scale(1.1);
 }
 
-.dislike.active {
+.dislike:active {
   color: red;
 }
 
-.like.active {
+.like:active {
   color: green;
 }
   
-.btn {
+
+
+
+
+
+
+.button {
     display: inline;
     font-size: 16px;
     cursor: pointer;
+    margin: 1em;
+    padding: 1em;
 }
 
 .inactive {
     color: grey;
   }
-
-  
-.active {
+ 
+#thumb_down.active {
     color: red;
   }
 
-.active {
+#thumb_up.active {
     color: green;
   }
