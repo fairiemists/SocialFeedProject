@@ -4,22 +4,23 @@ import { Icon } from '@iconify/react';
 
 const LikeButton = (props) => {
 
-    const [thumbsUp, setLikeButtonClass] = useState('inactive');
-    
-    function likeHandleClick(event) {
-        event.preventDefault();
-        if(thumbsUp === 'inactive'){
-            setLikeButtonClass('active');
-        }
-        else {
-            setLikeButtonClass('inactive');
-        }
-    }
+    const [thumbsUp, setLikeButtonClass] = useState('like');
+    const [activeState, setActiveState] = useState(props.isActive);
+
+    // function likeHandleClick(event) {
+    //     event.preventDefault();
+    //     if(thumbsUp === 'inactive'){
+    //         setLikeButtonClass('like active-like');
+    //     }
+    //     else {
+    //         setLikeButtonClass('inactive');
+    //     }
+    // }
 
 
     return ( 
         <div>
-            <button id='thumb_up' className='like' onClick={likeHandleClick}><Icon icon="fa:thumbs-up" aria-hidden="true"/></button>
+            <button className={activeState ? 'like active-like' : thumbsUp} onClick={() => setActiveState(!activeState)}><Icon icon="fa:thumbs-up" aria-hidden="true"/></button>
         </div>
     );
 }

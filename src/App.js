@@ -5,7 +5,9 @@ import DisplayPosts from "./Components/DisplayPosts/DisplayPosts";
 
 function App() {
   const [entries, setEntries] = useState([
-
+    // {
+      // person: 'charli', comment: 'Hewo', id: 1, isLiked: false, isDisliked: false
+    // }
   ]);
 
   function newPost(entry) {

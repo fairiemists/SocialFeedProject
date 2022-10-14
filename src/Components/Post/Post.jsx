@@ -5,18 +5,16 @@ import LikeButton from '../LikeButton';
 
 const Post = ({post}) => {
 
-    // const $('.like, .dislike').on('click', function(event) {
-    //     event.preventDefault();
-    //     $('.active').removeClass('active');
-    //     $(this).addClass('active');
-    // });
+    // function handleClick(){
+
+    // }
 
     return ( 
 
         <div>
             <p>{post.person}</p>
             <p>{post.comment}</p>
-            <div className='rating'><LikeButton/><DislikeButton/></div>
+            <div className='rating'><LikeButton isActive={post.isLiked}/><DislikeButton isActive={post.isDisliked}/></div>
         </div>
 
     );
